@@ -66,10 +66,4 @@ pipeline {
             }
         }
     }
-    post{
-        always {
-            fileOperations ([fileDeleteOperation(includes: '*.zip')])
-            junit 'reports/**/*.xml'
-      }
-    }
 }
