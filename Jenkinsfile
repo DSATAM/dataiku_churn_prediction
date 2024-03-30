@@ -6,8 +6,8 @@ pipeline {
     stages {
         stage('PREPARE') {
             steps {
-                sh "apt-get update"
-                sh "apt-get install -y python3"
+                sh "sudo apt-get update"
+                sh "sudo apt-get install -y python3"
             }
         }
         stage('PROJECT_VALIDATION') {
