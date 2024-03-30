@@ -4,12 +4,18 @@ pipeline {
         bundle_name = "${sh(returnStdout: true, script: 'echo "bundle_`date +%Y-%m-%d_%H-%m-%S`"').trim()}"
     }
     stages {
+        stage('PREPARE') {
+            steps {
+                sh "apt-get update"
+                sh "apt-get install -y python3"
+            }
+        }
         stage('PROJECT_VALIDATION') {
             steps {
                 withPythonEnv('python3') {
-                    bat "pip install -U pip"
-                    bat "pip install -r ${WORKSPACE}/requirements.txt"
-                    bat "pytest -s ${WORKSPACE}/1_project_validation/run_test.py -o junit_family=xunit1 --host='${DESIGN_URL}' --api='${DESIGN_API_KEY}' --project='${DSS_PROJECT}' --junitxml=reports/PROJECT_VALIDATION.xml"
+                    sh "pip install -U pip"
+                    sh "pip install -r ${WORKSPACE}/requirements.txt"
+                    sh "pytest -s ${WORKSPACE}/1_project_validation/run_test.py -o junit_family=xunit1 --host='${DESIGN_URL}' --api='${DESIGN_API_KEY}' --project='${DSS_PROJECT}' --junitxml=reports/PROJECT_VALIDATION.xml"
                 }
             }
         }
