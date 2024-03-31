@@ -8,6 +8,7 @@ pipeline {
             steps {
                 withPythonEnv('python3') {
                     sh "pip install -U pip"
+                    sh "sed -i 's|@DESIGN_URL@|${DESIGN_URL}|' requirements.txt"
                     sh "pip install -r ${WORKSPACE}/requirements.txt"
                     sh "pytest -s ${WORKSPACE}/1_project_validation/run_test.py -o junit_family=xunit1 --host='${DESIGN_URL}' --api='${DESIGN_API_KEY}' --project='${DSS_PROJECT}' --junitxml=reports/PROJECT_VALIDATION.xml"
                 }
