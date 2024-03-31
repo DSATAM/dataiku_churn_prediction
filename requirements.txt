@@ -1,3 +1,4 @@
+https://dss-a2babed1-1b7ea197-dku.us-east-1.app.dataiku.io/public/packages/dataiku-internal-client.tar.gz
 dataiku-api-client
 pandas
 radon
