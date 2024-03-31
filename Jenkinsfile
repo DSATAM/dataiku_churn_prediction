@@ -17,6 +17,7 @@ pipeline {
             steps {
                 withPythonEnv('python3') {
                     sh "pip install -U pip"
+                    sh "sed -i 's|@DESIGN_URL@|${DESIGN_URL}|' requirements.txt"
                     sh "pip install -r ${WORKSPACE}/requirements.txt"
                     sh "python ${WORKSPACE}/2_package_bundle/run_bundling.py '${DESIGN_URL}' '${DESIGN_API_KEY}' '${DSS_PROJECT}' ${bundle_name}"
                 }
