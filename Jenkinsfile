@@ -4,12 +4,6 @@ pipeline {
         bundle_name = "${sh(returnStdout: true, script: 'echo "bundle_`date +%Y-%m-%d_%H-%m-%S`"').trim()}"
     }
     stages {
-        stage('PREPARE') {
-            steps {
-                sh "apt-get update"
-                sh "apt-get install -y python3"
-            }
-        }
         stage('PROJECT_VALIDATION') {
             steps {
                 withPythonEnv('python3') {
