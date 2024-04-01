@@ -1,7 +1,7 @@
 ---
 - name: pythonSetup
   hosts: localhost
-  ansible_user: root
+  remote_user: root
   
   tasks: 
   - name: Install Python
