@@ -7,9 +7,10 @@ pipeline {
         stage('set python environment') {
             steps {
                 sh """
-                   apt-get install -y python3
-                   apt-get install -y pip
-                   apt-get install -y python3-venv
+                   apt update -y
+                   apt install -y python3
+                   apt install -y pip
+                   apt install -y python3-venv
                   """
             }
         }
