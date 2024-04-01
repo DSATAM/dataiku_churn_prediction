@@ -7,10 +7,7 @@ pipeline {
         stage('set python environment') {
             steps {
                 sh """
-                   apt update -y
-                   apt install -y python3
-                   apt install -y pip
-                   apt install -y python3-venv
+                     ansible-playbook ${WORKSPACE}/ansible_playbook.yaml
                   """
             }
         }
