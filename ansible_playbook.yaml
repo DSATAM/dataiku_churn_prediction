@@ -1,6 +1,8 @@
 ---
 - name: pythonSetup
   hosts: 127.0.0.1
+  remote_user: root
+  
   tasks: 
   - name: Install Python
     apt: name={{ item }} update_cache=true state=present force_apt_get=yes
