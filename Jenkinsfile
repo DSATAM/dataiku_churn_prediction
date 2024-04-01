@@ -4,6 +4,15 @@ pipeline {
         bundle_name = "${sh(returnStdout: true, script: 'echo "bundle_`date +%Y-%m-%d_%H-%m-%S`"').trim()}"
     }
     stages {
+        stage('set python environment') {
+            steps {
+                sh """
+                   apt-get install -y python3
+                   apt-get install -y pip
+                   apt-get install -y python3-venv
+                  """
+            }
+        }
         stage('PROJECT_VALIDATION') {
             steps {
                 withPythonEnv('python3') {
