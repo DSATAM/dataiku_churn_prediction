@@ -1,6 +1,6 @@
 ---
 - name: pythonSetup
-  hosts: localhost
+  hosts: 127.0.0.1
   tasks: 
   - name: Update APT 
     apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
