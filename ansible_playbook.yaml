@@ -6,7 +6,7 @@
   - name: try become methods
     command: whoami
     register: out
-  become: yes  
+    become: yes  
   - debug: var=out.stdout_lines
   - name: Install Python
     become_user: root
