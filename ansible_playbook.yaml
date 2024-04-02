@@ -5,7 +5,6 @@
   
   tasks: 
   - name: try become methods
-    become: true
     command: whoami
     register: out
 
