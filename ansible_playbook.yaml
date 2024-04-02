@@ -3,8 +3,7 @@
   hosts: localhost 
   become: yes
   become_user: "root"
-  become_method: su
-  #command: whoami
+  command: whoami
   
 - name: pythonSetup
   hosts: localhost
