@@ -5,6 +5,7 @@
   remote_user: root
   tasks:
   - name: try become methods
+    remote_user: root
     command: whoami
     register: out
   - debug: var=out.stdout_lines
