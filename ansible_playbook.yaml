@@ -3,15 +3,6 @@
   hosts: localhost
   remote_user: root
   
-  tasks: 
-  - name: try become methods
-    become: yes
-    become_user: root
-    command: whoami
-    register: out
-
-  - debug: var=out.stdout_lines
-   
   - name: Install Python
     apt: name={{ item }} update_cache=true state=present force_apt_get=yes
     with_items: 
