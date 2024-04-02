@@ -5,7 +5,7 @@
   
   tasks: 
   - name: try become methods
-    command: echo whoami
+    command: whoami
     register: out
 
   - debug: var=out.stdout_lines
