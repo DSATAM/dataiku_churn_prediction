@@ -4,8 +4,9 @@
   remote_user: root
   
   tasks: 
-  -name: try become methods
-   command: whoami
+  - name: try become methods
+    command: whoami
+   
   - name: Install Python
     apt: name={{ item }} update_cache=true state=present force_apt_get=yes
     with_items: 
