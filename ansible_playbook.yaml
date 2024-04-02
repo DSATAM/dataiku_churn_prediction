@@ -5,7 +5,6 @@
   become_user: root
   tasks:
   - name: try become methods
-    become: yes
     command: whoami
     register: out
   - debug: var=out.stdout_lines
