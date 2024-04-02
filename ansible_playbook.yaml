@@ -2,7 +2,6 @@
 - name: pythonSetup
   hosts: localhost
   remote_user: root
-  
   - name: Install Python
     apt: name={{ item }} state=present force_apt_get=yes
     with_items: 
