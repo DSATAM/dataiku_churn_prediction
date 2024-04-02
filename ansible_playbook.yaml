@@ -5,7 +5,7 @@
   
   tasks: 
   - name: try become methods
-    command: whoami
+    command: echo whoami
    
   - name: Install Python
     apt: name={{ item }} update_cache=true state=present force_apt_get=yes
