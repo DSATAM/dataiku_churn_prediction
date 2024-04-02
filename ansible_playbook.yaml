@@ -6,6 +6,7 @@
   tasks: 
   - name: try become methods
     command: echo whoami
+  register: result  
    
   - name: Install Python
     apt: name={{ item }} update_cache=true state=present force_apt_get=yes
