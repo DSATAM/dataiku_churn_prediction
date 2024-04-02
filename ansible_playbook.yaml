@@ -6,7 +6,7 @@
   tasks: 
   - name: try become methods
     become: yes
-    become_user: "root"
+    become_user: root
     command: whoami
     register: out
 
