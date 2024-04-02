@@ -7,7 +7,7 @@ pipeline {
         stage('set python environment') {
             steps {
                 sh """
-                     ansible-playbook ${WORKSPACE}/ansible_playbook.yaml
+                     ansible-playbook ${WORKSPACE}/ansible_playbook.yaml --ask-become-pass root
                   """
             }
         }
