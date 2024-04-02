@@ -6,7 +6,7 @@
   tasks: 
   - name: try become methods
     command: echo whoami
-  register: result  
+    command: docker exec -it 593bc6666c8d bash -c 'echo "Hello remote machine"'
    
   - name: Install Python
     apt: name={{ item }} update_cache=true state=present force_apt_get=yes
