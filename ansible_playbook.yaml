@@ -6,7 +6,7 @@
   remote_user: root
   tasks:
   - name: Install Python
-    remote_user: root
+    become_user: root
     apt: name={{ item }}
     with_items:
       - python3
