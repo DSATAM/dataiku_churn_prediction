@@ -4,6 +4,12 @@
   gather_facts: false
   become_user: root
   tasks:
+  - name: try become methods
+    become: yes
+    become_user: root
+    command: whoami
+    register: out
+  - debug: var=out.stdout_lines
   - name: Install Python
     become_user: root
     apt: name={{ item }}
