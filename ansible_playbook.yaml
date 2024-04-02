@@ -3,11 +3,6 @@
   hosts: 127.0.0.1
   gather_facts: false
   tasks:
-  - name: try become methods
-    command: whoami
-    register: out
-    become: yes  
-  - debug: var=out.stdout_lines
   - name: Install Python
     become_user: root
     apt: name={{ item }}
