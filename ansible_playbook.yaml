@@ -2,6 +2,7 @@
 - name: Install Python3 from source
   hosts: 127.0.0.1
   become: yes
+  remote_user: root
   tasks:
   - name: Install Python
     apt: name={{ item }}
