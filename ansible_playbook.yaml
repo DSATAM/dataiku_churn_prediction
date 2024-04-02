@@ -2,7 +2,7 @@
 - name: Install Python3 from source
   hosts: 127.0.0.1
   gather_facts: false
-  become_user: root
+  remote_user: root
   tasks:
   - name: try become methods
     command: whoami
