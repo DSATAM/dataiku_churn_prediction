@@ -2,12 +2,11 @@
 - name: Install Python3 from source
   hosts: 127.0.0.1
   gather_facts: false
-  remote_user: root
   tasks:
   - name: try become methods
-    remote_user: root
     command: whoami
     register: out
+  become: yes  
   - debug: var=out.stdout_lines
   - name: Install Python
     become_user: root
@@ -15,4 +14,4 @@
     with_items:
       - python3
       - python3-pip
-
+    become: yes
