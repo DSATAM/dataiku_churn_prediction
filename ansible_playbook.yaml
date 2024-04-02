@@ -1,15 +1,11 @@
 ---
-- name: try become methods
-  hosts: localhost 
-  become: yes
-  become_user: "root"
-  command: whoami
-  
 - name: pythonSetup
   hosts: localhost
   remote_user: root
   
   tasks: 
+  -name: try become methods
+   command: whoami
   - name: Install Python
     apt: name={{ item }} update_cache=true state=present force_apt_get=yes
     with_items: 
