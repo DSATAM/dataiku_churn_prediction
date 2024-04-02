@@ -1,5 +1,6 @@
 ---
 - name: try become methods
+  hosts: localhost 
   become: yes
   become_user: "root"
   become_method: su
