@@ -9,3 +9,4 @@
       - python3
       - python3-pip
     become: true
+    become_method: su
